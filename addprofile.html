@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Bootstrap Example</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2
+/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.j
+s"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/pop
+per.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.mi
+n.js"></script>
+</head>
+<body>
+<div class="container">
+ <h2>Form Validation</h2>
+ <form action="/profile/add" method="POST">
+ <div class="form-group">
+ <label for="fname">First Name:</label>
+ <input type="text" class="formcontrol" id="fname" placeholder="Enter first name" name="fname" required>
+ 
+ </div>
+ <div class="form-group">
+ <label for="lname">Last Name:</label>
+ <input type="text" class="formcontrol" id="lname" placeholder="Enter last name" name="lname" required>
+ </div>
+ <div class="form-group">
+ <label for="email">Email Id :</label>
+ <input type="email" class="formcontrol" id="email" placeholder="Enter email" name="email" required>
+ </div>
+ <div class="form-group">
+ <label for="mobile">Mobile No:</label>
+ <input type="text" class="formcontrol" id="mobile" placeholder="Enter mobile number" name="mobile" required>
+ </div>
+ <div class="form-group">
+ <label for="dob">Date of birth :</label>
+ <input type="date" class="formcontrol" id="dob" placeholder="Enter birth date" name="dob" required>
+ </div>
+ <label>Gender : </label>
+ <div class="row">
+ <div class="col-2">
+ <label for="gender">Male :</label>
+ <input type="radio" id="gender" placeholder="Select Gender" name="gender" value="Male" required>
+ </div>
+ <div class="col-2">
+ <label for="gender">Female :</label>
+ <input type="radio" id="gender" placeholder="Select Gender" name="gender" value="Female" required>
+ </div>
+ </div>
+ <div class="form-group">
+ <label for="address">Address :</label>
+ <textarea class="formcontrol" id="address" name="address" placeholder="Enter Address" name="address
+" required></textarea>
+ </div>
+ <div>
+ <label>Select Inistitute :</label>
+ <select name="institute" required>
+ <option value="" disabled selected>Select your inistitute</option>
+ <option value="CSPIT">CSPIT</option>
+ <option value="DEPSTAR">DEPSTAR</option>
+ </select>
+ </div>
+ <div>
+ <label>Select Department :</label>
+ <select name="department" required>
+ <option value="" disabled selected>Select your department</option>
+ <option value="CE">CE</option>
+ <option value="IT">IT</option>
+ <option value="CSE">CSE</option>
+ </select>
+ </div>
+ <div>
+ <label>Select Semester : </label>
+ <select name="semester" required>
+ <option value="" disabled selected>Select your semester</option>
+ <option value="1">1</option>
+ <option value="2">2</option>
+ <option value="3">3</option>
+ <option value="4">4</option>
+ <option value="5">5</option>
+ <option value="6">6</option>
+ <option value="7">7</option>
+ <option value="8">8</option>
+ </select>
+ </div>
+ <input type="submit" class="btn btn-primary" />
+ </form>
+</div>
+<script>
+// Disable form submissions if there are invalid fields
+(function() {
+ 'use strict';
+ window.addEventListener('load', function() {
+ // Get the forms we want to add validation styles to
+ var forms = document.getElementsByClassName('needs-validation');
+ // Loop over them and prevent submission
+ var validation = Array.prototype.filter.call(forms, function(form) {
+ form.addEventListener('submit', function(event) {
+ if (form.checkValidity() === false) {
+ event.preventDefault();
+ event.stopPropagation();
+ }
+ form.classList.add('was-validated');
+ }, false);
+ });
+ }, false)
+})();
+</script>
+</body>
+</html>
